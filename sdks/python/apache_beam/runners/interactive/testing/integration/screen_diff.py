@@ -161,11 +161,13 @@ else:
       """
       golden_root = kwargs.pop(
           'golden_dir',
-          'apache_beam/runners/interactive/testing/integration/goldens')
+          'sdks/python/apache_beam/runners/interactive/testing/integration/goldens'  # pylint: disable=line-too-long
+      )
       self._golden_dir = os.path.join(golden_root, platform.system())
       self._test_notebook_dir = kwargs.pop(
           'test_notebook_dir',
-          'apache_beam/runners/interactive/testing/integration/test_notebooks')
+          'sdks/python/apache_beam/runners/interactive/testing/integration/test_notebooks'  # pylint: disable=line-too-long
+      )
       BaseTestCase._headless = kwargs.pop('headless', True)
       self._test_env = None
       self._viewport_width, self._viewport_height = kwargs.pop(
